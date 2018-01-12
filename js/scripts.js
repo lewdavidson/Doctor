@@ -17,14 +17,13 @@ export class Doctor {
       let queryDocFound = result.data
       for (var i = 0; i <= drCount; i++) {
         let queryDocFound = result.data[i];
-        console.log(queryDocFound);
       }
       queryDocFound.forEach((result) => {
-        $('#dr-result').append(`<li>${result.profile.first_name} ${result.profile.last_name}</li>`);
+        $('#dr-result').append(`<li>${result.profile.first_name} ${result.profile.last_name}</li> <li>${result.practices.visit_address}</li>`);
       });
     })
     .fail(function() {
-      $('#dr-result').text(`<li>"Something went wrong, please modify your request and try again."</li>`);
+      $('#dr-result').text("Something went wrong, please modify your request and try again.");
     });
   }
 }
