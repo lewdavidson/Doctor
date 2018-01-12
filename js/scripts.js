@@ -15,15 +15,14 @@ export class Doctor {
     .then((result) => {
       const queryDocFound = result.data[0].profile;
       this.holder.push(queryDocFound);
-      console.log(this.holder);
     })
     .then((result) => {
       this.holder.forEach((result) => {
-      $('#dr-result').append(`<li>${result.first_name}</li>`);
+      $('#dr-result').append(`<li>${result.first_name} ${result.last_name}</li>`);
       });
     })
     .fail(function() {
-      console.log('fail');
+      $('#dr-result').text(`<li>"Something went wrong, please modify your request and try again."</li>`);
     });
   }
 }
