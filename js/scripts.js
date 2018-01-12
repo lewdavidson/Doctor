@@ -13,17 +13,14 @@ export class Doctor {
     const querySearch = `&query=${this.query}`;
     $.get(url + querySearch)
     .then((result) => {
-      let drCount = result.meta.count;
-      const queryDocFound = result.data[0].profile;
-      console.log(queryDocFound);
-      for (i = 0; i <= drCount; i++) {
-        result.data i++;
+      const drCount = result.meta.count
+      let queryDocFound = result.data
+      for (var i = 0; i <= drCount; i++) {
+        let queryDocFound = result.data[i];
+        console.log(queryDocFound);
       }
-      this.holder.push(queryDocFound);
-    })
-    .then((result) => {
-      this.holder.forEach((result) => {
-      $('#dr-result').append(`<li>${result.first_name} ${result.last_name}</li>`);
+      queryDocFound.forEach((result) => {
+        $('#dr-result').append(`<li>${result.profile.first_name} ${result.profile.last_name}</li>`);
       });
     })
     .fail(function() {
