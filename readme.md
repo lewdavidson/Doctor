@@ -27,7 +27,7 @@ Required functionality:
 -If no doctors meet the search criteria, the page must return a notification saying that.
 
 3. UX/UI
-  * User will have input fields for multiple ways to search the database. Site will return a list of results meeting their search terms to the user. 
+  * User will have input fields for multiple ways to search the database. Site will return a list of results meeting their search terms to the user.
 
 4. Polish
   * Would love to put ANY styling on it.
@@ -42,4 +42,6 @@ Required functionality:
   * cd doc-md  
   * npm install
   * bower install
+  * npm install babel-core
+  * gulp build
   * gulp serve
