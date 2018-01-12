@@ -14,7 +14,6 @@ export class Doctor {
     $.get(url + querySearch)
     .then((result) => {
       const queryDocFound = result.data[0].profile;
-      console.log(queryDocFound);
       this.holder.push(queryDocFound);
       console.log(this.holder);
     })

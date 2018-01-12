@@ -12,7 +12,7 @@ $(document).ready(function(){
 
     function renderCallback(result) {
       console.log(result);
-      $('#dr-result').append(`<li>${result.name}</li>`);
+      $('#dr-result').append(`<li>${result.first_name}</li>`);
     }
   });
 });
