@@ -10,7 +10,8 @@ $(document).ready(function(){
     let newDoc = new Doctor(query, firstName, lastName);
     newDoc.queryFind(query);
 
-    function renderCallback(name) {
+    function renderCallback(result) {
+      console.log(result);
       $('#dr-result').append(`<li>${result.name}</li>`);
     }
   });

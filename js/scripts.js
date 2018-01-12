@@ -8,28 +8,23 @@ export class Doctor {
     this.firstName = firstName;
     this.lastName = lastName;
     this.holder = [];
-    console.log(this.query)
   }
   queryFind (query) {
     const querySearch = `&query=${this.query}`;
     $.get(url + querySearch)
     .then((result) => {
-      const queryDocFound = result.data[0].practices;
-      queryDocFound.forEach((result) => {
-        // console.log(result.name);
-        // return result.name;
-        // renderCallback(result.name);
-        this.holder.push(result.name);
-        console.log(this.holder);
-        renderCallback(this.holder);
+      const queryDocFound = result.data[0].profile;
+      console.log(queryDocFound);
+      this.holder.push(queryDocFound);
+      console.log(this.holder);
+    })
+    .then((result) => {
+      this.holder.forEach((result) => {
+      $('#dr-result').append(`<li>${result.first_name}</li>`);
       });
     })
-    // .then ((queryDocFound) => {
-    // })
     .fail(function() {
-      console.log('failure');
+      console.log('fail');
     });
   }
 }
-
-function renderCallback() {};
