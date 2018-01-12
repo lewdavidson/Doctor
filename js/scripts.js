@@ -1,22 +1,35 @@
 var apiKey = require('./../.env').apiKey;
 
-const url = `https://api.betterdoctor.com/2016-03-01/doctors?location=or-portlandhttps://api.betterdoctor.com/2016-03-01/doctors?location=or-portland&user_key=${apiKey}`
+const url = `https://api.betterdoctor.com/2016-03-01/doctors?location=or-portland&user_key=${apiKey}`
 
 export class Doctor {
-  constructor(special, firstName, lastName) {
-    this.special = special;
+  constructor(query, firstName, lastName) {
+    this.query = query;
     this.firstName = firstName;
     this.lastName = lastName;
-    console.log(this.special)
+    this.holder = [];
+    console.log(this.query)
   }
-  specialtyFind (special) {
-    const specialSearch = `&specialty_uid=${this.special}`;
-    $.get(url + specialSearch)
-    .then(() => {
-      console.log('success');
+  queryFind (query) {
+    const querySearch = `&query=${this.query}`;
+    $.get(url + querySearch)
+    .then((result) => {
+      const queryDocFound = result.data[0].practices;
+      queryDocFound.forEach((result) => {
+        // console.log(result.name);
+        // return result.name;
+        // renderCallback(result.name);
+        this.holder.push(result.name);
+        console.log(this.holder);
+        renderCallback(this.holder);
+      });
     })
-    .fail(() => {
+    // .then ((queryDocFound) => {
+    // })
+    .fail(function() {
       console.log('failure');
     });
   }
 }
+
+function renderCallback() {};
