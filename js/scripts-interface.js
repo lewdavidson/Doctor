@@ -14,10 +14,4 @@ $(document).ready(function(){
 });
 
 
-
-
-
-// function renderCallback(result) {
-//   console.log(result);
-//   $('#dr-result').append(`<li>${result.first_name}</li>`);
-// }
+// + <li>${result.practices.visit_address}</li> + <li>${result.practices.phones[0].number}</li> + <li>"accepting new patients?" ${result.practices.accepts_new_patients}</li>

@@ -1,6 +1,6 @@
 var apiKey = require('./../.env').apiKey;
 
-const url = `https://api.betterdoctor.com/2016-03-01/doctors?location=or-portland&user_key=${apiKey}`
+const url = `https://api.betterdoctor.com/2016-03-01/doctors?location=OR&user_key=${apiKey}`
 
 export class Doctor {
   constructor(query, firstName, lastName) {
@@ -13,7 +13,12 @@ export class Doctor {
     const querySearch = `&query=${this.query}`;
     $.get(url + querySearch)
     .then((result) => {
+      let drCount = result.meta.count;
       const queryDocFound = result.data[0].profile;
+      console.log(queryDocFound);
+      for (i = 0; i <= drCount; i++) {
+        result.data i++;
+      }
       this.holder.push(queryDocFound);
     })
     .then((result) => {
