@@ -5,3 +5,4 @@ build/
 tmp/
 *.css.map
 bower_components/
+.env

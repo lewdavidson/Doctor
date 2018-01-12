@@ -1,5 +1,5 @@
 
-var Module = require('./../js/scripts.js').exportModule;
+var apiKey = require('./../.env').apiKey;
 //or import ES6
 
 $(document).ready(function(){
