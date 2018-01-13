@@ -5,13 +5,24 @@ $(document).ready(function(){
   $('form#search-form').submit(function(event){
     event.preventDefault();
     let query = $("#query").val();
-    let firstName = $('#first-name').val();
     let lastName = $('#last-name').val();
-    let newDoc = new Doctor(query, firstName, lastName);
+    let newDoc = new Doctor(query, lastName);
     newDoc.queryFind(query);
-
+    // newDoc.nameFind(lastName);
   });
 });
 
 
-// + <li>${result.practices.visit_address}</li> + <li>${result.practices.phones[0].number}</li> + <li>"accepting new patients?" ${result.practices.accepts_new_patients}</li>
+// function displayDoc(queryDocFound) {
+//   // blahblah function(datashit) {
+//   //   let i;
+//   //   for(i = 0; datashit; i++;)
+//   //   #result codeeeeeeeeeeeee
+//   // }
+//
+// };
+
+
+// function displayError (errormsg) {
+//
+// };
