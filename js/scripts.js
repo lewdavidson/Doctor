@@ -18,4 +18,14 @@ export class Doctor {
       failFind(error);
     });
   }
+  nameFind (lastName, displayDoc) {
+    const nameSearch = `&last_name=${this.lastName}`;
+    $.get( url + nameSearch )
+    .then (function(result){
+      displayDoc (result);
+    })
+    .fail (function(error){
+      failFind(error);
+    });
+  }
 }

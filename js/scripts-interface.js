@@ -8,7 +8,9 @@ $(document).ready(function(){
     let lastName = $('#last-name').val();
     let newDoc = new Doctor(query, lastName);
     newDoc.queryFind(query, displayDoc);
-    // newDoc.nameFind(lastName);
+    newDoc.nameFind(lastName);
+    newDoc.failFind();
+    newDoc.displayDoc();
   });
 });
 
