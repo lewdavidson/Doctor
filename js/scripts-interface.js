@@ -1,4 +1,4 @@
-import { Doctor } from "./../js/scripts.js"
+import { Doctor } from "./../js/scripts.js";
 //or import ES6
 
 $(document).ready(function(){
@@ -7,22 +7,32 @@ $(document).ready(function(){
     let query = $("#query").val();
     let lastName = $('#last-name').val();
     let newDoc = new Doctor(query, lastName);
-    newDoc.queryFind(query);
+    newDoc.queryFind(query, displayDoc);
     // newDoc.nameFind(lastName);
   });
 });
 
 
-// function displayDoc(queryDocFound) {
-//   // blahblah function(datashit) {
-//   //   let i;
-//   //   for(i = 0; datashit; i++;)
-//   //   #result codeeeeeeeeeeeee
-//   // }
-//
-// };
+function displayDoc(result) {
+  const drCount = result.meta.count;
+  let queryDocFound = result.data;
+  for (var i = 0; i <= drCount; i++) {
+  let puppyChow = result.data[i];
+};
+queryDocFound.forEach(function(result) {
+  let drNew = result.practices[0].accepts_new_patients;
+  function acceptingNew(){
+    if (drNew === true) {
+      return "Yes";
+    } else {
+      return "No.";
+    }
+  };
+    $('#dr-result').append(`<li>${result.profile.first_name} ${result.profile.last_name}</li> <li>${result.practices[0].visit_address.street}</li> <li>${result.practices[0].phones[0].number}</li>
+    <li>accepting new patients:  ${acceptingNew()}</li>`);
+  });
+};
 
-
-// function displayError (errormsg) {
-//
-// };
+function failFind(error) {
+  $('#dr-result').text("Something went wrong, please modify your request and try again.");
+};
