@@ -6,25 +6,24 @@ export class Doctor {
   constructor(query, lastName) {
     this.query = query;
     this.lastName = lastName;
-    this.holder = [];
   }
-  queryFind (query, displayDoc) {
+  queryFind(query, displayDoc) {
     const querySearch = `&query=${this.query}`;
     $.get(url + querySearch)
     .then(function(result) {
-      displayDoc (result);
+      displayDoc(result);
       })
-    .fail (function(error) {
+    .fail(function(error) {
       failFind(error);
     });
   }
-  nameFind (lastName, displayDoc) {
+  nameFind(lastName, displayDoc) {
     const nameSearch = `&last_name=${this.lastName}`;
     $.get( url + nameSearch )
-    .then (function(result){
-      displayDoc (result);
+    .then(function(result){
+      displayDoc(result);
     })
-    .fail (function(error){
+    .fail(function(error){
       failFind(error);
     });
   }

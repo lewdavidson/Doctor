@@ -6,17 +6,18 @@
     "Lew Davidson <lewdavidson47@gmail.com>"
   ],
   "license": "ISC",
-  "homepage": "",
+  "homepage": "https://github.com/lewdavidson/doctormd",
   "private": true,
   "ignore": [
     "*/.",
     "node_modules",
     "bower_components",
     "test",
-    "tests"
+    "tests",
+    "**/.*"
   ],
   "dependencies": {
-    "jquery": "^3.2.1",
+    "jquery": "^3.3.1",
     "bootstrap": "^3.3.7"
   }
 }
