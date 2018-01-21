@@ -7,7 +7,7 @@ export class Doctor {
     this.query = query;
     this.lastName = lastName;
   }
-  queryFind(query, displayDoc) {
+  queryFind(query, displayDoc, failFind) {
     const querySearch = `&query=${this.query}`;
     $.get(url + querySearch)
     .then(function(result) {
@@ -17,13 +17,14 @@ export class Doctor {
       failFind(error);
     });
   }
-  nameFind(lastName, displayDoc) {
+
+  nameFind(lastName, displayDoc, failFind) {
     const nameSearch = `&last_name=${this.lastName}`;
     $.get( url + nameSearch)
-    .then(function(result){
+    .then(function(result) {
       displayDoc(result);
     })
-    .fail(function(error){
+    .fail(function(error) {
       failFind(error);
     });
   }

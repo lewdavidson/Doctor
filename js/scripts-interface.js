@@ -6,14 +6,13 @@ $(document).ready(function(){
     let query = $("#query").val();
     let lastName = $('#last-name').val();
     let newDoc = new Doctor(query, lastName);
-    newDoc.queryFind(query, displayDoc);
-    newDoc.nameFind(lastName, displayDoc);
+    newDoc.queryFind(query, displayDoc, failFind);
+    newDoc.nameFind(lastName, displayDoc, failFind);
   });
 });
 
 
 function displayDoc(result) {
-  console.log(result);
   const drCount = result.meta.count;
   let queryDocFound = result.data;
   for (var i = 0; i <= drCount; i++) {
@@ -30,6 +29,7 @@ function displayDoc(result) {
     };
     $('#dr-result').append(`<li>${result.profile.first_name} ${result.profile.last_name}</li> <li>${result.practices[0].visit_address.street}</li> <li>${result.practices[0].phones[0].number}</li>
     <li>accepting new patients:  ${acceptingNew()}</li>`);
+
   });
 };
 
