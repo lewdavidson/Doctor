@@ -18,9 +18,8 @@ export class Doctor {
     });
   }
   nameFind(lastName, displayDoc) {
-    console.log(lastName);
     const nameSearch = `&last_name=${this.lastName}`;
-    $.get( url + nameSearch )
+    $.get( url + nameSearch)
     .then(function(result){
       displayDoc(result);
     })

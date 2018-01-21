@@ -13,6 +13,7 @@ $(document).ready(function(){
 
 
 function displayDoc(result) {
+  console.log(result);
   const drCount = result.meta.count;
   let queryDocFound = result.data;
   for (var i = 0; i <= drCount; i++) {
