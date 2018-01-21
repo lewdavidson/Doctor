@@ -8,7 +8,6 @@ $(document).ready(function(){
     let newDoc = new Doctor(query, lastName);
     newDoc.queryFind(query, displayDoc);
     newDoc.nameFind(lastName, displayDoc);
-    console.log(newDoc);
   });
 });
 

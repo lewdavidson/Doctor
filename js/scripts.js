@@ -12,12 +12,13 @@ export class Doctor {
     $.get(url + querySearch)
     .then(function(result) {
       displayDoc(result);
-      })
+    })
     .fail(function(error) {
       failFind(error);
     });
   }
   nameFind(lastName, displayDoc) {
+    console.log(lastName);
     const nameSearch = `&last_name=${this.lastName}`;
     $.get( url + nameSearch )
     .then(function(result){
