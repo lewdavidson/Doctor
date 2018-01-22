@@ -6,9 +6,15 @@ $(document).ready(function(){
     let query = $("#query").val();
     let lastName = $('#last-name').val();
     let newDoc = new Doctor(query, lastName);
-    newDoc.queryFind(query, displayDoc, failFind);
-    newDoc.nameFind(lastName, displayDoc, failFind);
-    newDoc.bothFind(lastName, query, displayDoc, failFind);
+
+    if(lastName.length === 0){
+      newDoc.queryFind(query, displayDoc, failFind);
+    }else if(query.length === 0){
+      newDoc.nameFind(lastName, displayDoc, failFind);
+    }else{
+      newDoc.bothFind(lastName, query, displayDoc, failFind);
+    }
+
   });
 });
 

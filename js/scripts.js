@@ -7,38 +7,34 @@ export class Doctor {
     this.query = query;
     this.lastName = lastName;
   }
-  if(this.lastName.length === 0) {
-    queryFind(query, displayDoc, failFind) {
-      const querySearch = `&query=${this.query}`;
-      $.get(url + querySearch)
-      .then(function(result) {
-        displayDoc(result);
-      })
-      .fail(function(error) {
-        failFind(error);
-      });
-    }
-  }else if(this.query.length === 0) {
-      nameFind(lastName, displayDoc, failFind) {
-        const nameSearch = `&last_name=${this.lastName}`;
-        $.get(url + nameSearch)
-        .then(function(result) {
-          displayDoc(result);
-        })
-        .fail(function(error) {
-          failFind(error);
-        });
-      }
-    }else {
-      bothFind(lastName, query, displayDoc, failFind) {
-        const bothSearch = `&query=${this.query}&last_name=${this.lastName}`;
-        $.get(url + bothSearch)
-        .then(function(result){
-          displayDoc(result);
-        })
-        .fail(function(error){
-          failFind(error);
-        });
-      }
-    }
+  queryFind(query, displayDoc, failFind){
+    const querySearch = `&query=${this.query}`;
+    $.get(url + querySearch)
+    .then(function(result){
+      displayDoc(result);
+    })
+    .fail(function(error){
+      failFind(error);
+    });
+  }
+  nameFind(lastName, displayDoc, failFind){
+    const nameSearch = `&last_name=${this.lastName}`;
+    $.get(url + nameSearch)
+    .then(function(result){
+      displayDoc(result);
+    })
+    .fail(function(error){
+      failFind(error);
+    });
+  }
+  bothFind(lastName, query, displayDoc, failFind){
+    const bothSearch = `&query=${this.query}&last_name=${this.lastName}`;
+    $.get(url + bothSearch)
+    .then(function(result){
+      displayDoc(result);
+    })
+    .fail(function(error){
+      failFind(error);
+    });
+  }
 }
