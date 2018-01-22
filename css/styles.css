@@ -1,0 +1,43 @@
+.container {
+  background: #909590;
+}
+
+h1 {
+  color: #474A48;
+}
+
+#search {
+  text-align: center;
+}
+
+label {
+  margin-top: 25px;
+  font-size: 1.5em;
+}
+
+input {
+  margin-top: 15px;
+  width: 100px;
+}
+
+button{
+  background: #EECF6D;
+  border-radius: 5px;
+  margin-top: 30px;
+  height: 50px;
+  width: 400px;
+  border: solid black 2px;
+  margin-bottom: 20px;
+}
+
+ul {
+  list-style: none;
+  margin-top: 25px;
+}
+
+li {
+  padding: 5px;
+  color: #537A5A;
+  font-weight: bold;
+  font-size: 1.3em;
+}

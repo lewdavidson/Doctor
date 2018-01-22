@@ -3,32 +3,39 @@
   <head>
     <script src="build/js/vendor.min.js"></script>
     <script src="build/js/app.js"></script>
+    <link rel="stylesheet" href="build/css/vendor.css">
+    <link rel="stylesheet" href="build/css/styles.css">
     <meta charset="utf-8">
     <title>Doc MD</title>
   </head>
-  <body>
-    <h2>Find a doctor Portland, OR</h2>
-    <p>enter your serch terms below to find elligable doctors in the area.</p>
-    <div class="form-section">
-      <form id="search-form">
-        <h3>Search by specialty:</h3>
-        <label for="special">Enter  illness:</label>
-        <input type="text" name="special" id="query">
+  <div class="container">
+    <body>
+      <div class="jumbotron">
+        <h1 class="display-4">Find a doctor Portland, OR</h1>
+        <p class="lead">Enter your serch terms below to find elligable doctors in the area.</p>
+      </div>
 
-        <h2>OR</h2>
+      <div class="form-group">
+        <form id="search-form">
+          <h2 id="search">Please choose a way to search:</h2>
 
-        <h3>Search by doctor name:</h3>
-        <label for="last-name">Last Name</label>
-        <input type="text" name="last-name" id="last-name">
+          <label for="special">By Illness:</label>
+          <input class="form-control" type="text" name="special" id="query">
 
-        <button type="submit" name="search">Find a Doctor</button>
-      </form>
-    </div>
+          <h2>OR</h2>
 
-      <ul id="dr-result">
+          <label for="last-name">By doctor's last name:</label>
+          <input class="form-control" type="text" name="last-name" id="last-name">
 
-      </ul>
-  </body>
+          <button type="submit" name="search">Find a Doctor</button>
+        </form>
+      </div>
+
+        <ul id="dr-result">
+
+        </ul>
+    </body>
+  </div>
 </html>
 
 

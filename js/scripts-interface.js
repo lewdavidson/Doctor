@@ -34,8 +34,8 @@ function displayDoc(result) {
         return "No.";
       }
     };
-    $('#dr-result').append(`<li>${result.profile.first_name} ${result.profile.last_name}</li> <li>${result.practices[0].visit_address.street}</li> <li>${result.practices[0].phones[0].number}</li>
-    <li>accepting new patients:  ${acceptingNew()}</li>`);
+    $('#dr-result').append(`<li>${result.profile.first_name} ${result.profile.last_name}</li> <li>Address: ${result.practices[0].visit_address.street}</li> <li>Phone: ${result.practices[0].phones[0].number}</li>
+    <li>Accepting new patients:  ${acceptingNew()}</li><hr>`);
 
   });
 };

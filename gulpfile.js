@@ -92,7 +92,7 @@ gulp.task('serve', function() {
   gulp.watch(['js/*.js'], ['jsBuild']);
   gulp.watch(['bower.json'], ['bowerBuild']);
   gulp.watch(['*.html'], ['htmlBuild']);
-  gulp.watch("scss/*.scss", ['cssBuild']);
+  gulp.watch("css/*.css", ['cssBuild']);
 });
 //subtasks for gulp watch to reload the server//
 gulp.task('jsBuild', ['jsBrowserify', 'jshint'], function(){
@@ -108,7 +108,7 @@ gulp.task('htmlBuild', function(){
 });
 
 gulp.task('cssBuild', function() {
-  return gulp.src('./scss/*.scss')
+  return gulp.src('./css/*.css')
     .pipe(sourcemaps.init())
     .pipe(sass().on('error', sass.logError))
     .pipe(sourcemaps.write())
